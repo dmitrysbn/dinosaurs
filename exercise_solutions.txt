@@ -1,0 +1,27 @@
+Question 1: Number of dinosaurs
+SELECT COUNT(name) FROM dinos;
+answer: 331
+
+Question 2: Dinosaurs from the Jurassic period
+SELECT * FROM dinos WHERE period = 'Jurassic';
+answer: long list
+
+Question 3: Lengths of Cretaceous period dinosaurs
+SELECT SUM(length) FROM dinos WHERE period = 'Cretaceous';
+answer: 1366.45
+
+Question 4: Juraceous Park list
+SELECT * FROM dinos WHERE period = 'Jurassic' OR period = 'Cretacious' ORDER BY species;
+answer: long ist of 92
+
+Question 5: Saurischians
+SELECT * FROM dinos WHERE t_order = 'Saurischia' AND diet = 'Herbivorous';
+answer: long list of 68
+
+Question 6: Shortest dino
+UPDATE dinos SET name = 'Shortie' WHERE length = (SELECT MIN(length) FROM dinos);
+SELECT * FROM dinos WHERE length = (SELECT MIN(length) FROM dinos);
+
+Question 7: Roll call
+SELECT * FROM dinos WHERE name = (SELECT MIN(name) FROM dinos);
+answer: Aardonyx
